@@ -7,11 +7,11 @@ use App\Models\EvaluationAnswer;
 
 class EvaluationAnswerController extends Controller
 {
-    public static function index() {
+    public function index() {
         return EvaluationAnswer::all();
     }
 
-    public static function show($id) {
+    public function show($id) {
         return EvaluationAnswer::find($id); 
     }
 

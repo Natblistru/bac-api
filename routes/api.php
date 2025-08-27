@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EvaluationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::get('/test', function () {
     return response()->json(['ok' => true]);
 });
 
+Route::get('/evaluations', [EvaluationController::class, 'index']);      // listă
+
+Route::get('/evaluations/{id}', [EvaluationController::class, 'show']);

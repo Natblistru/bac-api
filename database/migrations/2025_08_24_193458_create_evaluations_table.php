@@ -17,7 +17,8 @@ return new class extends Migration
             $table->unsignedSmallInteger('year');
             $table->unsignedBigInteger("subject_id");
             $table->tinyInteger("status")->default(0);
-            $table->enum('type', ['Pretestare', 'Testare de baza', 'Evaluare suplimentara', 'Teste pentru exersare1', 'Teste pentru exersare2']);
+            $table->enum('profil', ['real', 'umanistic']);
+            $table->enum('type', ['Pretestare', 'Sesiune de baza', 'Sesiune suplimentara', 'Teste pentru exersare1', 'Teste pentru exersare2']);
             $table->timestamps();
     
             $table->foreign("subject_id")->references("id")->on("subjects");

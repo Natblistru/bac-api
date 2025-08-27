@@ -14,6 +14,7 @@ class Evaluation extends Model
         'name',
         'year',
         'subject_id',
+        'profil',
         'type',
         'status'
     ];

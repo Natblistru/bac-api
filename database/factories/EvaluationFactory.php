@@ -9,17 +9,46 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class EvaluationFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected static int $i = 0;
+
     public function definition(): array
     {
+
+        $evaluations = [
+            ["year" => 2025,  "profil" => "real",  "type" => "Sesiune de baza",   "name" => "Sesiune de baza, Limba si literatura română (2025)"],
+            ["year" => 2025,  "profil" => "real",  "type" => "Sesiune suplimentara",   "name" => "Sesiune suplimentara, Limba si literatura română (2025)"],
+            ["year" => 2025,  "profil" => "real",  "type" => "Teste pentru exersare1",   "name" => "Teste pentru exersare1, Limba si literatura română (2025)"],
+            ["year" => 2025,  "profil" => "real",  "type" => "Teste pentru exersare2",   "name" => "Teste pentru exersare2, Limba si literatura română (2025)"],
+            ["year" => 2025,  "profil" => "real",  "type" => "Pretestare",   "name" => "Pretestare, Limba si literatura română (2025)"],
+            
+            ["year" => 2025,  "profil" => "umanistic",  "type" => "Sesiune de baza",   "name" => "Sesiune de baza, Limba si literatura română (2025)"],
+            ["year" => 2025,  "profil" => "umanistic",  "type" => "Sesiune suplimentara",   "name" => "Sesiune suplimentara, Limba si literatura română (2025)"],
+            ["year" => 2025,  "profil" => "umanistic",  "type" => "Teste pentru exersare1",   "name" => "Teste pentru exersare1, Limba si literatura română (2025)"],
+            ["year" => 2025,  "profil" => "umanistic",  "type" => "Teste pentru exersare2",   "name" => "Teste pentru exersare2, Limba si literatura română (2025)"],
+            ["year" => 2025,  "profil" => "umanistic",  "type" => "Pretestare",   "name" => "Pretestare, Limba si literatura română (2025)"],
+            
+            ["year" => 2024,  "profil" => "real",  "type" => "Sesiune de baza",   "name" => "Sesiune de baza, Limba si literatura română (2024)"],
+            ["year" => 2024,  "profil" => "real",  "type" => "Sesiune suplimentara",   "name" => "Sesiune suplimentara, Limba si literatura română (2024)"],
+            ["year" => 2024,  "profil" => "real",  "type" => "Teste pentru exersare1",   "name" => "Teste pentru exersare1, Limba si literatura română (2024)"],
+            ["year" => 2024,  "profil" => "real",  "type" => "Teste pentru exersare2",   "name" => "Teste pentru exersare2, Limba si literatura română (2024)"],
+            ["year" => 2024,  "profil" => "real",  "type" => "Pretestare",   "name" => "Pretestare, Limba si literatura română (2024)"],
+
+            
+            ["year" => 2024,  "profil" => "umanistic",  "type" => "Sesiune de baza",   "name" => "Sesiune de baza, Limba si literatura română (2024)"],
+            ["year" => 2024,  "profil" => "umanistic",  "type" => "Sesiune suplimentara",   "name" => "Sesiune suplimentara, Limba si literatura română (2024)"],
+            ["year" => 2024,  "profil" => "umanistic",  "type" => "Teste pentru exersare1",   "name" => "Teste pentru exersare1, Limba si literatura română (2024)"],
+            ["year" => 2024,  "profil" => "umanistic",  "type" => "Teste pentru exersare2",   "name" => "Teste pentru exersare2, Limba si literatura română (2024)"],
+            ["year" => 2024,  "profil" => "umanistic",  "type" => "Pretestare",   "name" => "Pretestare, Limba si literatura română (2024)"],
+        ];
+
+        $a = $evaluations[ static::$i % count($evaluations) ];
+        static::$i++;
+
         return [
-            'year' => 2025,
-            'type' => 'Testare de baza',
-            'name' => 'Testare de baza, Limba română (2025)',
+            'year' => $a['year'],
+            'profil' => $a['profil'],
+            'type' => $a['type'],
+            'name' => $a['name'],
             'subject_id' => 1,
         ];
     }
