@@ -26,3 +26,5 @@ Route::get('/test', function () {
 Route::get('/evaluations', [EvaluationController::class, 'index']);      // listă
 
 Route::get('/evaluations/{id}', [EvaluationController::class, 'show']);
+
+Route::get('/evaluations/{id}/tree', [EvaluationController::class, 'tree']);

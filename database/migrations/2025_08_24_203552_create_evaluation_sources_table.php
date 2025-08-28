@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer("order_number")->default(1);
             $table->json('content')->nullable();
-
+            $table->tinyInteger("status")->default(0);
             $table->unsignedBigInteger("evaluation_id");
             $table->timestamps();
 
