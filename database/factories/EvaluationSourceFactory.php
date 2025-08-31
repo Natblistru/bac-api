@@ -106,72 +106,79 @@ class EvaluationSourceFactory extends Factory
         </p>
         <p>În elaborarea eseului, vei avea în vedere următoarele repere:</p>
 
-        <table style="width:100%; border-collapse:collapse;">
+        <table style="width:100%; border-collapse:collapse; font-family:'Times New Roman'; font-size:18px;">
           <tbody>
             <tr>
               <td style="padding:4px 8px;">a) exprimarea clară a opiniei;</td>
-              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2</td>
             </tr>
             <tr>
               <td style="padding:4px 8px;">b) formularea a două teze distincte;</td>
-              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4</td>
             </tr>
             <tr>
               <td style="padding:4px 8px;">c) susținerea fiecărei teze cu câte un argument;</td>
-              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4</td>
             </tr>
             <tr>
               <td style="padding:4px 8px;">d) referința la două texte din literatura română, studiate sau citite independent, care confirmă fiecare teză enunțată;</td>
-              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4 5 6</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4 5 6</td>
             </tr>
             <tr>
               <td style="padding:4px 8px;">e) respectarea structurii eseului argumentativ;</td>
-              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3</td>
             </tr>
             <tr>
               <td style="padding:4px 8px;">f) respectarea limitei de întindere;</td>
-              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1</td>
             </tr>
           </tbody>
         </table>
         HTML;
 
         $html5 = <<<'HTML'
-          <p>Redactează un eseu argumentativ de 1–1,5 pagini, în raport cu aserțiunea:
-            <em>Valoarea unui om nu constă în ceea ce are, ci în ceea ce este.</em>
-            (Oscar Wilde)
-          </p>
-          <p>În elaborarea eseului, vei avea în vedere următoarele repere:</p>
+        <p>Pentru redactarea tuturor secvențelor scrise vei obține 20 de puncte.</p>
 
-          <table style="width:100%; border-collapse:collapse;">
-            <tbody>
-              <tr>
-                <td style="padding:4px 8px;">a) exprimarea clară a opini​ei;</td>
-                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2</td>
-              </tr>
-              <tr>
-                <td style="padding:4px 8px;">b) formularea a două teze distincte;</td>
-                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4</td>
-              </tr>
-              <tr>
-                <td style="padding:4px 8px;">c) susținerea fiecărei teze cu câte un argument;</td>
-                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4</td>
-              </tr>
-              <tr>
-                <td style="padding:4px 8px;">d) referința la două texte din literatura română, studiate sau citite independent, care confirmă fiecare teză enunțată;</td>
-                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4 5 6</td>
-              </tr>
-              <tr>
-                <td style="padding:4px 8px;">e) respectarea structurii eseului argumentativ;</td>
-                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3</td>
-              </tr>
-              <tr>
-                <td style="padding:4px 8px;">f) respectarea limitei de întindere;</td>
-                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1</td>
-              </tr>
-            </tbody>
-          </table>
-          HTML;
+        <table style="width:100%; border-collapse:collapse; font-family:'Times New Roman'; font-size:18px;">
+          <tbody>
+            <tr>
+              <td style="padding:4px 8px; text-align:center; width:2.5em;">#</td>
+              <td style="padding:4px 8px;"><strong>Cerințe față de redactare:</strong></td>
+              <td style="padding:4px 8px; text-align:center; white-space:nowrap;"><strong>Punctaj</strong></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px; text-align:center;">1</td>
+              <td style="padding:4px 8px;">Organizarea în scris a ideilor și respectarea limitei de întindere</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px; text-align:center;">2</td>
+              <td style="padding:4px 8px;">Aptitudini de analiză și de interpretări critice</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3</td>
+
+            </tr>
+            <tr>
+              <td style="padding:4px 8px; text-align:center;">3</td>
+              <td style="padding:4px 8px;">Corectitudinea stilistică</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4 5</td>
+
+            </tr>
+            <tr>
+              <td style="padding:4px 8px; text-align:center;">4</td>
+              <td style="padding:4px 8px;">Respectarea normelor ortografice și gramaticale</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4 5</td>
+
+            </tr>
+            <tr>
+              <td style="padding:4px 8px; text-align:center;">5</td>
+              <td style="padding:4px 8px;">Respectarea normelor de punctuație</td>
+              <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4 5</td>
+
+            </tr>
+          </tbody>
+        </table>
+        HTML;
+
 
         $ev_sources = [
             ["order_number" => 1,  "evaluation_id" => 1,  "content" => $html1],

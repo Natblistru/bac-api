@@ -122,7 +122,7 @@ HTML;
 
 
         $task14 = <<<'HTML'
-<p style="text-align:center;">INVITAȚIE</p>
+<p style="text-align:center;" class="centered">INVITAȚIE</p>
 HTML;
 
 $hint14 = <<<'HTML'
