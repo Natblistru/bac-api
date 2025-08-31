@@ -9,9 +9,10 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class EvaluationSourceFactory extends Factory
 {
+    protected static int $i = 0;
     public function definition(): array
     {
-        $html = <<<'HTML'
+        $html1 = <<<'HTML'
           <h2>Citește textul propus și realizează itemii:</h2>
           <p style= "text-indent: 2em">
             <u>Primii ani de după război au fost grei... Îmi petreceam timpul
@@ -89,12 +90,104 @@ class EvaluationSourceFactory extends Factory
           </p>
         HTML;
 
+        $html2 = <<<'HTML'
+        <p>Scrie, în spațiul rezervat, o invitație pe care o vei adresa colegilor tăi, valorificând datele legendei: „Te numești Alexandru / Alexandra Baciu. Studiezi în clasa a XII-a la Liceul Teoretic „Mihai Eminescu” din orașul Nisporeni și ești membru/membră al/a Clubului
+        „Quo vadis”. Aveți intenția să organizați, în cadrul liceului, un atelier de informare cu genericul: <em>Învață în Moldova!</em> Activitatea are drept scop promovarea studiilor universitare din Republica Moldova și se va desfășura pe data de 19 iunie 2025, la ora 14:00, în incinta instituției în care înveți”. Vei semna invitația.</p>
+        HTML;
+
+        $html3 = <<<'HTML'
+        <p>Formulează, în text coerent de 7-8 rânduri, un punct de vedere prin care să argumentezi dacă învățarea limbilor străine te ajută să înțelegi cultura altor țări, referindu-te la propria experiență.</p>
+        HTML;
+
+        $html4 = <<<'HTML'
+        <p>Redactează un eseu argumentativ de 1–1,5 pagini, în raport cu aserțiunea:
+          <em>Valoarea unui om nu constă în ceea ce are, ci în ceea ce este.</em>
+          (Oscar Wilde)
+        </p>
+        <p>În elaborarea eseului, vei avea în vedere următoarele repere:</p>
+
+        <table style="width:100%; border-collapse:collapse;">
+          <tbody>
+            <tr>
+              <td style="padding:4px 8px;">a) exprimarea clară a opiniei;</td>
+              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;">b) formularea a două teze distincte;</td>
+              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;">c) susținerea fiecărei teze cu câte un argument;</td>
+              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;">d) referința la două texte din literatura română, studiate sau citite independent, care confirmă fiecare teză enunțată;</td>
+              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4 5 6</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;">e) respectarea structurii eseului argumentativ;</td>
+              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;">f) respectarea limitei de întindere;</td>
+              <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1</td>
+            </tr>
+          </tbody>
+        </table>
+        HTML;
+
+        $html5 = <<<'HTML'
+          <p>Redactează un eseu argumentativ de 1–1,5 pagini, în raport cu aserțiunea:
+            <em>Valoarea unui om nu constă în ceea ce are, ci în ceea ce este.</em>
+            (Oscar Wilde)
+          </p>
+          <p>În elaborarea eseului, vei avea în vedere următoarele repere:</p>
+
+          <table style="width:100%; border-collapse:collapse;">
+            <tbody>
+              <tr>
+                <td style="padding:4px 8px;">a) exprimarea clară a opini​ei;</td>
+                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2</td>
+              </tr>
+              <tr>
+                <td style="padding:4px 8px;">b) formularea a două teze distincte;</td>
+                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4</td>
+              </tr>
+              <tr>
+                <td style="padding:4px 8px;">c) susținerea fiecărei teze cu câte un argument;</td>
+                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4</td>
+              </tr>
+              <tr>
+                <td style="padding:4px 8px;">d) referința la două texte din literatura română, studiate sau citite independent, care confirmă fiecare teză enunțată;</td>
+                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3 4 5 6</td>
+              </tr>
+              <tr>
+                <td style="padding:4px 8px;">e) respectarea structurii eseului argumentativ;</td>
+                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1 2 3</td>
+              </tr>
+              <tr>
+                <td style="padding:4px 8px;">f) respectarea limitei de întindere;</td>
+                <td style="padding:4px 8px; text-align:right; white-space:nowrap;">L 0 1</td>
+              </tr>
+            </tbody>
+          </table>
+          HTML;
+
+        $ev_sources = [
+            ["order_number" => 1,  "evaluation_id" => 1,  "content" => $html1],
+            ["order_number" => 2,  "evaluation_id" => 1,  "content" => $html2],
+            ["order_number" => 3,  "evaluation_id" => 1,  "content" => $html3],
+            ["order_number" => 4,  "evaluation_id" => 1,  "content" => $html4],
+            ["order_number" => 5,  "evaluation_id" => 1,  "content" => $html5],            
+        ];
+
+        $a = $ev_sources[ static::$i % count($ev_sources) ];
+        static::$i++;
+
         return [
-            'order_number'  => 1,
-            'evaluation_id' => 1,
-            'content'       => [
-                'html'   => $html, 
-            ],
+            'order_number'  => $a['order_number'],
+            'evaluation_id' => $a['evaluation_id'],
+            'content' => $a['content'] === null ? null : ['html' => $a['content']],
         ];
     }
 }

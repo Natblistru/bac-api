@@ -117,6 +117,203 @@ HTML;
 <p>Textul urmărește un fir narativ clar, cu succesiune de evenimente și coordonate spațio-temporale: „Ajuns la Viena, i-am trimis o telegramă… Mi-a răspuns două zile mai târziu… am convenit să ne vedem peste câteva zile… Am ieșit din Institutul de matematică…”. Aceste indicii confirmă caracterul narativ al fragmentului.</p>
 HTML;
 
+        $content27 = <<<'HTML'
+<p>Dragi colegi,</p>
+<p>
+  Clubul „Quo vadis” al Liceului Teoretic „Mihai Eminescu” din Nisporeni vă invită la un atelier de informare cu genericul „Învață în Moldova!”. Evenimentul are ca scop promovarea studiilor universitare din Republica Moldova: admitere, specializări, burse, viață de campus și oportunități pentru absolvenți.
+</p>
+<p>
+  Vă așteptăm pe 19 iunie 2025, la ora 14:00, în incinta liceului. Vino cu întrebări și curiozități – vom discuta exemple concrete și trasee posibile după Bac.
+</p>
+<p>Cu prietenie,</p>
+<p>
+  Alexandra Baciu, clasa a XII-a<br>
+  Membră, Clubul „Quo vadis”
+</p>
+HTML;     
+
+        $content28 = <<<'HTML'
+<p>Formula de adresare: Dragi colegi,</p>
+HTML; 
+
+        $content29 = <<<'HTML'
+<p>Nominalizarea organizatorilor: Clubul „Quo vadis” al Liceului Teoretic „Mihai Eminescu” din Nisporeni</p>
+HTML;   
+
+        $content30 = <<<'HTML'
+<p>Denumirea evenimentului și a genericului: atelier de informare cu genericul „Învață în Moldova!”</p>
+HTML;
+
+        $content31 = <<<'HTML'
+<p>Scopului activității: promovarea studiilor universitare din Republica Moldova: admitere, specializări, burse, viață de campus și oportunități pentru absolvenți</p>
+HTML;
+
+        $content32 = <<<'HTML'
+<p>Timpul desfășurării: 19 iunie 2025, la ora 14:00</p>
+HTML;
+
+        $content33 = <<<'HTML'
+<p>Locul desfășurării: în incinta liceului</p>
+HTML;
+
+        $content34 = <<<'HTML'
+<p> Respectarea marginii şi alineatelor: textul este structurat în paragrafe, cu aliniate la începutul paragrafelor.</p>
+HTML;
+
+        $content35 = <<<'HTML'
+<p>Semnătura: Cu prietenie, Alexandra Baciu, clasa a XII-a Membră, Clubul „Quo vadis”</p>
+HTML;
+
+        $content36 = <<<'HTML'
+<p>Consider că învățarea limbilor străine te ajută decisiv să înțelegi cultura altor țări, fiindcă limba poartă valori, norme și moduri de a vedea lumea. Din experiența mea cu engleza, idiomurile mi-au clarificat umorul și regulile conversației; materialele autentice, sensul sărbătorilor și al referințelor istorice. Interacțiunile cu nativi m-au învățat coduri de politețe. Deși nu e suficientă singură, limba deschide ușa către contexte și întărește dialogul intercultural.</p>
+HTML;
+
+        $content37 = <<<'HTML'
+<p>Formularea punctului de vedere: învățarea limbilor străine te ajută decisiv să înțelegi cultura altor țări</p>
+HTML;
+
+        $content38 = <<<'HTML'
+<p>Dovezile din text care fac punctul de vedere plauzibil:
+<ul>
+  <li>Afirmația de principiu: limba „poartă valori, norme și moduri de a vedea lumea” — argument cauză-efect între limbă și cultură.</li>
+  <li>Concesia nuanțată („singură, nu e suficientă, dar deschide ușa…”) crește credibilitatea argumentului.</li>
+</ul>
+</p>
+HTML;
+
+        $content39 = <<<'HTML'
+<p>Exemplele din experiența personală:
+<ul>
+  <li>Engleza: „abia prin expresii și idiomuri am înțeles umorul și regulile conversației informale”; „urmărind materiale autentice, am descifrat sensul sărbătorilor și al referințelor istorice din spațiul anglofon.”</li>
+  <li>Interacțiuni cu vorbitori nativi: „mi-au arătat coduri de politețe și așteptări sociale diferite.”</li>
+</ul>
+</p>
+HTML;
+
+        $content40 = <<<'HTML'
+<p>Dovezi ale coerenței textului:</p>       
+<ul>
+  <li>Unitate tematică: toate alineatele tratează aceeași idee – legătura limbă–cultură.</li>
+  <li>Progresie logică: teză → exemple personale (idiomuri, materiale autentice, interacțiuni) → concluzie.</li>
+  <li>Conectori/coezive: „fiindcă”, „Evident”, „Astfel” marchează cauză, nuanțare și concluzie.</li>
+  <li>Perspectivă constantă: persoana I („din experiența mea”, „mi-au arătat”).</li>
+  <li>Relații teză–argument: fiecare exemplu explică afirmația inițială.</li>
+  <li>Închidere circulară: concluzia reia și sintetizează ideea de pornire.</li>
+</ul>  
+HTML;
+
+        $content41 = <<<'HTML'
+<p>Consider că afirmația lui Oscar Wilde este adevărată: valoarea unui om nu stă în ceea ce posedă, ci în ceea ce devine prin caracter, cultură morală și fapte. Bunurile pot ușura viața, dar nu pot înlocui integritatea, luciditatea și responsabilitatea – criterii după care îi judecăm pe cei din jur și care rămân relevante indiferent de timp.</p>
+<p>În primul rând, valoarea autentică se întemeiază pe caracter, nu pe avere. Posesiunea este aleatorie, supusă norocului și conjuncturilor, pe când tăria de caracter se clădește prin alegeri repetate și costisitoare. Un om bogat poate fi în același timp lipsit de onestitate, iar un om fără resurse materiale poate avea autoritate morală și credibilitate. Aici funcționează un raport cauză–efect: caracterul produce încredere, iar încrederea produce valoare socială.</p>
+<p>Exemplară este nuvela <em>Moara cu noroc</em> de <em>Ioan Slavici</em>. Ghiță pornește cu intenția de a-și întemeia gospodăria, dar, fascinat de câștigul rapid, face un pact tacit cu Lică Sămădăul. Etapă după etapă, cedează la presiunea banului, devine duplicitar și își risipește libertatea interioară. Situația-cheie este momentul în care preferă tăcerea complice în fața abuzurilor lui Lică: exact clipa în care „are” mai mult, „este” tot mai puțin. Finalul tragic confirmă că acumularea fără criterii morale erodează însăși ființa, deci valoarea.</p>
+<p>În al doilea rând, identitatea se confirmă prin grija pentru oameni și asumarea consecințelor acțiunilor. Identitatea nu se reduce la statut, ci se verifică în acțiune: curaj, luciditate, perseverență, compasiune. Aceste calități creează sens și dau măsura unui destin; ele rezistă schimbărilor economice și sociale.</p>
+<p>Această idee străbate romanul <em>Baltagul</em> de <em>Mihail Sadoveanu</em>. <strong>Vitoria Lipan</strong> nu are bogății ieșite din comun, dar are o energie morală neobișnuită: își asumă drumul anevoios prin iarnă, reconstituie logic faptele, descoperă ucigașii și împlinește rânduiala. Situația investigației pas cu pas – dialogurile cu oamenii din hanuri, verificarea urmelor, confruntarea finală – arată că demnitatea, credința și dreptatea dau valoare persoanei mai mult decât orice bun material.</p>
+<p>Se poate obiecta că bunăstarea e necesară pentru demnitate. Admit: lipsa cronică de resurse poate limita libertatea. Totuși, tocmai în condiții precare devine vizibil ce este omul: dacă rămâne drept când ar fi mai comod să cedeze, dacă împarte când ar putea să strângă doar pentru sine, dacă spune adevărul când tăcerea l-ar avantaja. Posesiunea facilitează, dar nu fundamentează valoarea; fundamentul este etic.</p>
+<p>Prin urmare, tezele se susțin reciproc: (1) caracterul, nu averea, asigură valoarea durabilă; (2) valoarea se dovedește în fapte de responsabilitate și adevăr. Literatura noastră, de la <em>Slavici</em> la <em>Sadoveanu</em>, confirmă că ceea ce „ai” poate spori sau diminua confortul, dar ceea ce „ești” hotărăște destinul. Iar în viața de zi cu zi, oamenii pe care îi urmăm sau pe care îi regretăm nu sunt cei mai bogați, ci cei mai demni.</p>
+HTML;
+
+        $content42 = <<<'HTML'
+<p>Exprimarea clară a opiniei: „Consider că afirmația lui Oscar Wilde este adevărată: valoarea unui om nu stă în ceea ce posedă, ci în ceea ce devine prin caracter, cultură morală și fapte.”</p>
+HTML;
+
+        $content43 = <<<'HTML'
+<p>Formularea tezei 1: „În primul rând, valoarea autentică se întemeiază pe caracter, nu pe avere.”</p>
+HTML;
+        $content44 = <<<'HTML'
+<p>Formularea tezei 2: „În al doilea rând, identitatea se confirmă prin grija pentru oameni și asumarea consecințelor acțiunilor.”</p>
+HTML;
+
+        $content45 = <<<'HTML'
+<p>Formularea unui argument pentru teza 1: „Posesiunea este aleatorie, supusă norocului și conjuncturilor, pe când tăria de caracter se clădește prin alegeri repetate și costisitoare.”</p>
+HTML;
+
+        $content46 = <<<'HTML'
+<p>Formularea unui argument pentru teza 2: „Identitatea nu se reduce la statut, ci se verifică în acțiune: curaj, luciditate, perseverență, compasiune.”</p>
+HTML;
+
+        $content47 = <<<'HTML'
+<p>Mențiunea unui text din literatura română care să confirme teza 1: nuvela „Moara cu noroc” de Ioan Slavici.</p>
+HTML;
+
+        $content48 = <<<'HTML'
+<p>Mențiunea unui text din literatura română care să confirme teza 2: romanul „Baltagul” de Mihail Sadoveanu.</p>
+HTML;
+
+        $content49 = <<<'HTML'
+<p>Textul respectă structura argumentativă:</p>
+<ol>
+  <li><strong>Teza</strong> este formulată clar: „Consider că afirmația lui Oscar Wilde este adevărată…”.</li>
+  <li><strong>Justificarea</strong> se articulează în două trepte:
+    <ul>
+      <li>(1) „valoarea se întemeiază pe caracter, nu pe avere”, susținută de ideea că „posesiunea e aleatorie…”, cu proba din <em>Moara cu noroc</em> (Slavici);</li>
+      <li>(2) „ceea ce ești se probează prin răspundere față de ceilalți”, sprijinită de „identitatea se verifică în acțiune…”, cu exemplul din <em>Baltagul</em> (Sadoveanu).</li>
+    </ul>
+  </li>
+  <li><strong>Concluzia</strong> închide demonstrația: „Prin urmare… ceea ce «ești» hotărăște destinul.”</li>
+</ol>
+HTML;
+
+        $content50 = <<<'HTML'
+<p>Utilizarea conectorilor specifici/logici: „În primul rând”, „În al doilea rând”, „Prin urmare”</p>
+HTML;
+
+        $content51 = <<<'HTML'
+<p>Respectarea aspectului grafic îngrijit/lizibil: </p>
+<ul>
+  <li>Textul este structurat în paragrafe, cu aliniate la începutul paragrafelor.</li>
+  <li>Sunt folosite diacritice corecte (fără abrevieri).</li>
+</ul>
+HTML;
+
+        $content52 = <<<'HTML'
+<p>Respectarea limitei de întindere: 2946 simboluri (cu maximum 3400 permise)</p>  
+HTML;
+
+        $content53 = <<<'HTML'
+<p>Exprimarea clară si consecutivă a ideilor: „Consider că afirmația lui Oscar Wilde este adevărată: ...”, „Consider că învățarea limbilor străine te ajută decisiv să înțelegi cultura altor țări...” </p>        
+HTML;
+
+        $content54 = <<<'HTML'
+<p>Respectarea limitei de întindere: </p>
+<ul>
+  <li>continutul textului argumentativ din punctul 11 - 395 simboluri (cu maximum 420-480 permise)</li>
+  <li>continutul eseului din punctul 12 - 2500 simboluri (cu maximum 3400 permise)</li>
+</ul>
+HTML;
+
+        $content55 = <<<'HTML'
+<p>Constatarea aspectelor definitorii ale sarcinilor: scrie explicit raspunsul cu indicarea indicilor din text. De exemplu este identificat motivul pasiunii pentru cunoaștere și este demonstrat prin doi indici din text (obsesia studiului; întâlnirea cu Hilbert ca „instanță supremă”).”</p>      
+HTML;
+
+        $content56 = <<<'HTML'
+<p>Utilizarea de date/informații/fapte elocvente: sunt alese citate scurte, semnificative din probele textuale.</p>         
+HTML;
+
+        $content57 = <<<'HTML'
+<p>Interpretarea critică a informației, constatarea fenomenelor literare: după fiecare citat, este scris 1–2 enunțuri de analiză/interpretare. De exemplu, pentru citatul „inima mi se zbătea ca peștele în năvod” este oferită interpretarea: „Metafora/comparația sugerează tensiunea inițiatică și capturarea de către vocație.”</p>      
+HTML;
+
+        $content58 = <<<'HTML'
+<p>Respectarea normelor stilistice:</p>
+<ul>
+  <li>Este utilizat un limbaj formal și termeni specifici: „teze”, „argument”, „concluzie”.</li>
+  <li>Sunt utilizați conectori logici și coerenți: „În primul rând…”, „În al doilea rând…”, „Se poate obiecta…”, „Prin urmare…”</li>
+  <li>Coerență de persoană și timp: balanță între persoana I („Consider că…”) și formulări impersonale în analiză.</li>
+</ul>
+HTML;
+
+        $content59 = <<<'HTML'
+<p>Respectarea normelor de punctuație și ortografie: textul este redactat corect, fără greșeli de ortografie, cu diacritice adecvate.</p>
+HTML;
+
+        $content60 = <<<'HTML'
+<p>Respectarea normelor de punctuaţie:</p>
+  <li>Virgule corecte în enumerări: „curaj, luciditate, perseverență, compasiune”; „valori, norme și moduri”.</li>
+  <li>Fără virgulă între subiect și predicat: „Posesiunea este aleatorie…” (nu apare virgulă după „Posesiunea”).</li>
+  <li>Ghilimele pentru citate: „Moara cu noroc”, „Baltagul”.</li>
+HTML;
+                              
+
 
         $answers = [
             ["task" => "Sinonimul acceptabil:",  "content" => $content1,    "max_points" => 1, "evaluation_question_id" => 1], 
@@ -169,6 +366,78 @@ HTML;
             ["task" => "Argumentul 1 cu exemple din text",    "content" => $content25,    "max_points" => 2, "evaluation_question_id" => 25],  
 
             ["task" => "Argumentul 2 cu exemple dint text",    "content" => $content26,    "max_points" => 2, "evaluation_question_id" => 26],
+            
+            ["task" => "Invitație",    "content" => $content27,    "max_points" => 0, "evaluation_question_id" => 27], 
+        
+            ["task" => "Invitație",    "content" => $content28,    "max_points" => 1, "evaluation_question_id" => 28], 
+                    
+            ["task" => "Invitație",    "content" => $content29,    "max_points" => 1, "evaluation_question_id" => 29], 
+        
+            ["task" => "Invitație",    "content" => $content30,    "max_points" => 2, "evaluation_question_id" => 30], 
+        
+            ["task" => "Invitație",    "content" => $content31,    "max_points" => 1, "evaluation_question_id" => 31], 
+        
+            ["task" => "Invitație",    "content" => $content32,    "max_points" => 2, "evaluation_question_id" => 32], 
+        
+            ["task" => "Invitație",    "content" => $content33,    "max_points" => 1, "evaluation_question_id" => 33], 
+        
+            ["task" => "Invitație",    "content" => $content34,    "max_points" => 1, "evaluation_question_id" => 34], 
+        
+            ["task" => "Invitație",    "content" => $content35,    "max_points" => 1, "evaluation_question_id" => 35], 
+        
+            ["task" => "Invitație",    "content" => $content36,    "max_points" => 0, "evaluation_question_id" => 36], 
+        
+            ["task" => "Invitație",    "content" => $content37,    "max_points" => 2, "evaluation_question_id" => 37], 
+        
+            ["task" => "Invitație",    "content" => $content38,    "max_points" => 2, "evaluation_question_id" => 38], 
+        
+            ["task" => "Invitație",    "content" => $content39,    "max_points" => 1, "evaluation_question_id" => 39], 
+        
+            ["task" => "Invitație",    "content" => $content40,    "max_points" => 1, "evaluation_question_id" => 40],
+                
+            ["task" => "Invitație",    "content" => $content41,    "max_points" => 0, "evaluation_question_id" => 41], 
+            
+            ["task" => "Invitație",    "content" => $content42,    "max_points" => 2, "evaluation_question_id" => 42],
+
+            ["task" => "Invitație",    "content" => $content43,    "max_points" => 2, "evaluation_question_id" => 43], 
+            
+            ["task" => "Invitație",    "content" => $content44,    "max_points" => 2, "evaluation_question_id" => 44], 
+            
+            ["task" => "Invitație",    "content" => $content45,    "max_points" => 2, "evaluation_question_id" => 45], 
+            
+            ["task" => "Invitație",    "content" => $content46,    "max_points" => 2, "evaluation_question_id" => 46], 
+            
+            ["task" => "Invitație",    "content" => $content47,    "max_points" => 3, "evaluation_question_id" => 47], 
+            
+            ["task" => "Invitație",    "content" => $content48,    "max_points" => 3, "evaluation_question_id" => 48], 
+            
+            ["task" => "Invitație",    "content" => $content49,    "max_points" => 1, "evaluation_question_id" => 49], 
+            
+            ["task" => "Invitație",    "content" => $content50,    "max_points" => 1, "evaluation_question_id" => 50], 
+            
+            ["task" => "Invitație",    "content" => $content51,    "max_points" => 1, "evaluation_question_id" => 51], 
+            
+            ["task" => "Invitație",    "content" => $content52,    "max_points" => 1, "evaluation_question_id" => 52], 
+            
+            ["task" => "Invitație",    "content" => $content53,    "max_points" => 1, "evaluation_question_id" => 53], 
+            
+            ["task" => "Invitație",    "content" => $content54,    "max_points" => 1, "evaluation_question_id" => 54], 
+            
+            ["task" => "Invitație",    "content" => $content55,    "max_points" => 1, "evaluation_question_id" => 55], 
+            
+            ["task" => "Invitație",    "content" => $content56,    "max_points" => 1, "evaluation_question_id" => 56],
+                
+            ["task" => "Invitație",    "content" => $content57,    "max_points" => 1, "evaluation_question_id" => 57], 
+                
+            ["task" => "Invitație",    "content" => $content58,    "max_points" => 5, "evaluation_question_id" => 58], 
+                
+            ["task" => "Invitație",    "content" => $content59,    "max_points" => 5, "evaluation_question_id" => 59], 
+                
+            ["task" => "Invitație",    "content" => $content60,    "max_points" => 5, "evaluation_question_id" => 60],
+
+            
+
+                
         ];
 
         $a = $answers[ static::$i % count($answers) ];

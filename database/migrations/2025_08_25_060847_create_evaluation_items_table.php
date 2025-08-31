@@ -17,7 +17,7 @@ return new class extends Migration
             $table->json('task')->nullable();
 
             $table->unsignedBigInteger("evaluation_source_id");
-            $table->unsignedBigInteger("topic_id");
+            $table->unsignedBigInteger("topic_id")->nullable();
             $table->tinyInteger("status")->default(0);
             $table->timestamps();
 

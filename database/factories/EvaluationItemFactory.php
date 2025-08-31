@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class EvaluationItemFactory extends Factory
 {
-    private $index = 0;
+    protected static int $i = 0;
     public function definition(): array
     {
         $task1 = <<<'HTML'
@@ -85,18 +85,38 @@ HTML;
 </p>
 HTML;
 
+        $task10 = <<<'HTML'
+<p style="line-height:1.6">
+  INVITAȚIE
+</p>
+HTML;
 
-        $tasks = [$task1, $task2, $task3, $task4, $task5, $task6, $task7, $task8, $task9];
-        $taskContent = $tasks[$this->index];
-        $this->index++;
+        $ev_items = [
+            ["order_number" => 1,  "evaluation_source_id" => 1,  "task" => $task1, "topic_id" => 1],
+            ["order_number" => 2,  "evaluation_source_id" => 1,  "task" => $task2, "topic_id" => 1],
+            ["order_number" => 3,  "evaluation_source_id" => 1,  "task" => $task3, "topic_id" => 1],
+            ["order_number" => 4,  "evaluation_source_id" => 1,  "task" => $task4, "topic_id" => 1],
+            ["order_number" => 5,  "evaluation_source_id" => 1,  "task" => $task5, "topic_id" => 1],
+            ["order_number" => 6,  "evaluation_source_id" => 1,  "task" => $task6, "topic_id" => 1],
+            ["order_number" => 7,  "evaluation_source_id" => 1,  "task" => $task7, "topic_id" => 1],
+            ["order_number" => 8,  "evaluation_source_id" => 1,  "task" => $task8, "topic_id" => 1],
+            ["order_number" => 9,  "evaluation_source_id" => 1,  "task" => $task9, "topic_id" => 1],
+            ["order_number" => 1,  "evaluation_source_id" => 2,  "task" => null, "topic_id" => 1],  
+            ["order_number" => 1,  "evaluation_source_id" => 3,  "task" => null, "topic_id" => 1], 
+            ["order_number" => 1,  "evaluation_source_id" => 4,  "task" => null, "topic_id" => 1],     
+            ["order_number" => 1,  "evaluation_source_id" => 5,  "task" => null, "topic_id" => null],      
+        ];
+
+        $a = $ev_items[ static::$i % count($ev_items) ];
+        static::$i++;
 
         return [
             'task' => [
-                'html'   => $taskContent, // șirul HTML
+                'html'   => $a['task'], // șirul HTML
             ],
-            'order_number' => $this->index,
-            'topic_id' => 1,
-            'evaluation_source_id'=> 1,
+            'order_number' => $a['order_number'],
+            'topic_id' => $a['topic_id'],
+            'evaluation_source_id'=> $a['evaluation_source_id'],
         ];
     }
 }

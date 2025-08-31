@@ -13,6 +13,6 @@ class EvaluationAnswerOptionSeeder extends Seeder
      */
     public function run(): void
     {
-        EvaluationAnswerOption::factory()->count(72)->create();
+        EvaluationAnswerOption::factory()->count(161)->create();
     }
 }
