@@ -13,6 +13,7 @@ class EvaluationSourceFactory extends Factory
     public function definition(): array
     {
         $html1 = <<<'HTML'
+          <h2 style="text-align: center;font-family: 'Times New Roman', Times, serif;font-size: 26px;">Subiectul I (44 de puncte)</h2>
           <h2>Citește textul propus și realizează itemii:</h2>
           <p style= "text-indent: 2em">
             <u>Primii ani de după război au fost grei... Îmi petreceam timpul
@@ -91,15 +92,18 @@ class EvaluationSourceFactory extends Factory
         HTML;
 
         $html2 = <<<'HTML'
+        <h2 style="text-align: center;font-family: 'Times New Roman', Times, serif;font-size: 26px;">Subiectul al II-lea (10 de puncte)</h2>
         <p>Scrie, în spațiul rezervat, o invitație pe care o vei adresa colegilor tăi, valorificând datele legendei: „Te numești Alexandru / Alexandra Baciu. Studiezi în clasa a XII-a la Liceul Teoretic „Mihai Eminescu” din orașul Nisporeni și ești membru/membră al/a Clubului
         „Quo vadis”. Aveți intenția să organizați, în cadrul liceului, un atelier de informare cu genericul: <em>Învață în Moldova!</em> Activitatea are drept scop promovarea studiilor universitare din Republica Moldova și se va desfășura pe data de 19 iunie 2025, la ora 14:00, în incinta instituției în care înveți”. Vei semna invitația.</p>
         HTML;
 
         $html3 = <<<'HTML'
+        <h2 style="text-align: center;font-family: 'Times New Roman', Times, serif;font-size: 26px;">Subiectul al III-lea (6 de puncte)</h2>
         <p>Formulează, în text coerent de 7-8 rânduri, un punct de vedere prin care să argumentezi dacă învățarea limbilor străine te ajută să înțelegi cultura altor țări, referindu-te la propria experiență.</p>
         HTML;
 
         $html4 = <<<'HTML'
+        <h2 style="text-align: center;font-family: 'Times New Roman', Times, serif;font-size: 26px;">Subiectul al IV-lea (20 de puncte)</h2>
         <p>Redactează un eseu argumentativ de 1–1,5 pagini, în raport cu aserțiunea:
           <em>Valoarea unui om nu constă în ceea ce are, ci în ceea ce este.</em>
           (Oscar Wilde)
