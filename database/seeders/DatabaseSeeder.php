@@ -10,6 +10,7 @@ use Database\Seeders\SubjectSeeder;
 use Database\Seeders\EvaluationSeeder;
 use Database\Seeders\TopicImageSeeder;
 use Database\Seeders\TopicVideoSeeder;
+use Database\Seeders\TopicDomainSeeder;
 use Database\Seeders\EvaluationItemSeeder;
 use Database\Seeders\EvaluationAnswerSeeder;
 use Database\Seeders\EvaluationOptionSeeder;
@@ -29,6 +30,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class,
             SubjectSeeder::class,
+            TopicDomainSeeder::class,
+            TopicContentUnitSeeder::class,
             TopicSeeder::class,
             TopicImageSeeder::class,
             TopicFlipCardSeeder::class,

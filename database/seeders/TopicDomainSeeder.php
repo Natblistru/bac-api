@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\Topic;
+use App\Models\TopicDomain;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class TopicSeeder extends Seeder
+class TopicDomainSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Topic::factory()->count(108)->create();
+        TopicDomain::factory()->count(4)->create();
     }
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TopicController;
 use App\Http\Controllers\EvaluationController;
 
 /*
@@ -24,6 +25,10 @@ Route::get('/test', function () {
 });
 
 Route::get('/evaluations', [EvaluationController::class, 'index']);      // listă
+
+Route::get('/topics', [TopicController::class, 'index']);      // listă
+
+Route::get('/topics/{id}', [TopicController::class, 'show']);
 
 Route::get('/evaluations/{id}', [EvaluationController::class, 'show']);
 

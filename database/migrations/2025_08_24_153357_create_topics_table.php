@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
         $table->string("name",500);
         $table->string("path",500)->default('');
-        $table->unsignedBigInteger('subject_id');
+        $table->json('content')->nullable();
+        $table->unsignedBigInteger('topic_content_unit_id');
 
         $table->unsignedTinyInteger('status')->default(0);
         $table->timestamps();
 
-        $table->foreign("subject_id")->references("id")->on("subjects");
+        $table->foreign("topic_content_unit_id")->references("id")->on("topic_content_units");
         });
     }
 
