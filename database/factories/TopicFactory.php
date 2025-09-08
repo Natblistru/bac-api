@@ -14,6 +14,56 @@ class TopicFactory extends Factory
     public function definition(): array
     {
 
+        $html87 = <<<'HTML'
+        <p style= "font-weight: 700; text-indent: 2em"> Cuvintele polisemantice sunt cele care, alături de termenii noi, îmbogățesc în mod constant lexicul unei limbi. Cuvintele pot căpăta noi sensuri și, astfel, vorbim despre polisemantism.
+        </p>
+        <h3>Ce este polisemia și cuvintele polisemantice</h3>
+          <p style = "text-indent: 2em">
+            Polisemia sau polisemantismul este, conform definiției celei mai frecvente, însușirea unui cuvânt de a avea mai multe sensuri, dar care derivă din sensul de bază, căpătând noi nuanțe. Așadar, cuvintele polisemantice au mai multe sensuri între care există o legătură. Originea rădăcinii polyseme provine din latină polysēmus, ea însăși din greaca veche πολύσημος, polusēmos , compus din πολύς, Polus ( „mulți“) și σῆμα, SEMA ( „semn“).
+          </p>
+
+          <p style = "text-indent: 2em">Cuvintele cele mai des utilizate sunt adesea polisemice, adică au mai multe semnificații. În schimb, vocabularele specializate, precum cele științifice sau tehnice, sunt monosemice, având un singur sens.
+          </p>
+          <h3>Exemple de cuvinte polisemantice</h3>
+          <ul>
+            <li>A bate
+                <ul>
+                    <li>A făcut cursa în 10 minute și și-a <b>bătut</b> propriul record.</li>
+                    <li>În zona de sud a țării a <b>bătut</b> grindina.</li>
+                    <li>Vântul <b>bate</b> cu putere.</li>
+                    <li>M-a amenințat că mă va <b>bate</b>.</li>
+                    <li>Ia-ți o umbrelă, ca să nu te <b>bată</b> soarele în cap.</li>
+                    <li>Echipa lor de fotbal <b>bate</b> în retragere.</li>
+                    <li>De la sperietură, inima îi <b>bate</b> de-i sare din piept.</li>
+                </ul>
+            </li>
+            <li>Aripă
+                <ul>  
+                    <li>Pasărea are o <b>aripă</b> rănită.</li>
+                    <li>Incendiul a cuprins <b>aripa</b> dreaptă a avionului.</li>
+                </ul>
+            </li>               
+            <li>A se prinde
+                <ul> 
+                    <li>El nu se <b>prinde</b> la glumele mele.</li>
+                    <li>Te-am <b>prins</b> din urmă.</li>
+                    <li>Mi-am <b>prins</b> pantalonii în cui.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Care este diferența dintre cuvintele polisemantice și omonime</h3>
+
+
+          <p style = "text-indent: 2em">
+            Atât polisemia, cât și omonimia se referă la cuvinte cu semnificații multiple. Polisemia se referă la existența mai multor sensuri posibile pentru un cuvânt. Omonimia se referă la existența a două sau mai multe cuvinte care au aceeași ortografie sau pronunție, dar sensuri și origini diferite. Aceasta este diferența principală dintre polisemie și omonimie.
+          </p>
+
+          <p style = "text-indent: 2em">
+            Uneori este dificil să se stabilească dacă un cuvânt este polisem sau nu, deoarece relațiile dintre cuvinte pot fi vagi și neclare. Dar examinarea originilor cuvintelor poate ajuta la a decide dacă un cuvânt este polisemic sau omonim.
+          </p>
+        HTML;
+
         $topics = [
             ["name" => "Statutul de vorbitor cult al limbii române", "topic_content_unit_id" => 1, "path" => '' ,  "content" => null], //1
             ["name" => "Adevărul științific despre limba română", "topic_content_unit_id" => 1, "path" => '' ,  "content" => null],    //2
@@ -120,8 +170,8 @@ class TopicFactory extends Factory
 
             ["name" => "Norme ortoepice și ortografice", "topic_content_unit_id" => 18, "path" => '' ,  "content" => null], //86
 
-            ["name" => "Relații logico-semantice între cuvinte. Polisemia", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //87
-            ["name" => "Sinonimia contextuală", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //88
+            ["name" => "Polisemia", "topic_content_unit_id" => 19, "path" => '' ,  "content" => $html87], //87
+            ["name" => "Relații logico-semantice între cuvinte. Sinonimia contextuală", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //88
             ["name" => "Formarea cuvintelor cu afixe și elemente de compunere neologice", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //89
             ["name" => "Expresii autohtone, internaționale, intraductibile", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //90
             ["name" => "Lexic și lexicografie terminologică", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //91

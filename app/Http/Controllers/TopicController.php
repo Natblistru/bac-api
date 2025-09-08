@@ -46,8 +46,35 @@ class TopicController extends Controller
     }
 
 
-    public function show($id) {
-        return Topic::find($id); 
+    public function show(Request $request, $id)
+    {
+        // controle din query string: ?include_videos=1&include_presentations=1
+        $includeVideos = $request->boolean('include_videos', true);
+        $includePres   = $request->boolean('include_presentations', true);
+
+        $with = ['topic_content_unit.topic_domain'];
+
+        if ($includeVideos) {
+            $with['videos'] = function ($q) {
+                $q->select('id','topic_id','title','source')  // adaugă câmpuri după nevoie
+                ->orderBy('id');
+            };
+        }
+
+        if ($includePres) {
+            $with['presentations'] = function ($q) {
+                $q->select('id','topic_id','name','path','content_text')
+                ->orderBy('id');
+            };
+        }
+
+        // important: eager loading + 404 dacă nu există
+        $topic = Topic::with($with)->findOrFail($id);
+
+        // util: număr total resurse asociate
+        $topic->loadCount(['videos','presentations']);
+
+        return $topic;
     }
 
 }
