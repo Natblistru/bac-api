@@ -51,6 +51,7 @@ class TopicController extends Controller
         // controle din query string: ?include_videos=1&include_presentations=1
         $includeVideos = $request->boolean('include_videos', true);
         $includePres   = $request->boolean('include_presentations', true);
+        $includeBps    = $request->boolean('include_breakpoints', true);
 
         $with = ['topic_content_unit.topic_domain'];
 
@@ -59,6 +60,16 @@ class TopicController extends Controller
                 $q->select('id','topic_id','title','source')  // adaugă câmpuri după nevoie
                 ->orderBy('id');
             };
+           if ($includeBps) {
+            // eager-load pentru relația imbricată videos.breakpoints
+            $with['videos.breakpoints'] = function ($q) {
+                $q->select('id','topic_video_id','name','time','seconds','status')
+                  ->orderBy('seconds');
+                // (opțional, dacă în TopicVideoBreakpoint ai `protected $with = ['topic_video']`)
+                // $q->without('topic_video');
+            };
+        }
+
         }
 
         if ($includePres) {

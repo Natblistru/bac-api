@@ -18,7 +18,7 @@ class TopicVideoBreakpoint extends Model
         'status'
     ];
 
-    protected $with = ['topic_video'];
+    // protected $with = ['topic_video'];
     public function topic_video() {
         return $this->belongsTo(TopicVideo::class, 'topic_video_id', 'id');
     }

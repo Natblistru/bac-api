@@ -39,9 +39,9 @@ class TopicVideoFactory extends Factory
 
         $videos = [
             [
-                "title"        => 'Figuri de stil',
-                "source"       => 'https://www.youtube.com/embed/J4fZmULfzP4?si=xvNRIJpicjoblLKv',
-                "topic_id"     => 1, // asigură-te că există topic-ul 1
+                "title"        => 'Monosemia și polisemia. Sensul propriu/figurat',
+                "source"       => 'https://www.youtube.com/embed/lzX7o8SDE_Q?si=7FzAoBVgrS6ewnxL',
+                "topic_id"     => 87, 
                 "content_text" => $content_text1,
             ],
         ];

@@ -9,23 +9,28 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class TopicVideoBreakpointFactory extends Factory
 {
-    private $index = 0;
+    protected static int $i = 0;
  
     public function definition(): array
     {
         $breakpoints = [
-            ["time" => "0:17:40", "seconds" => "1060", "name" => "Repere"],
-            ["time" => "0:17:54", "seconds" => "1074", "name" => "Keywords"],
+            ["time" => "0:06:00", "seconds" => "360", "name" => "Monosemie", "topic_video_id" => 1],
+            ["time" => "0:06:48", "seconds" => "408", "name" => "Polisemie", "topic_video_id" => 1],
+            ["time" => "0:07:42", "seconds" => "462", "name" => "Context", "topic_video_id" => 1],
+            ["time" => "0:08:17", "seconds" => "497", "name" => "Sinonime contextuale (a trece)", "topic_video_id" => 1],
+            ["time" => "0:08:54", "seconds" => "534", "name" => "Sens propriu", "topic_video_id" => 1],
+            ["time" => "0:09:48", "seconds" => "588", "name" => "Sens figurat", "topic_video_id" => 1],                        
+            ["time" => "0:11:23", "seconds" => "683", "name" => "Exemplu de analiza a poeziei", "topic_video_id" => 1],            
         ];
 
-        $breakpoint = $breakpoints[$this->index];
+        $a = $breakpoints[ static::$i % count($breakpoints) ];
+        static::$i++;
 
-        $this->index++;
         return [
-            'name' => $breakpoint['name'],
-            'time' => $breakpoint['time'],
-            'seconds' => $breakpoint['seconds'],
-            'topic_video_id' => 1,
+            'name' => $a['name'],
+            'time' => $a['time'],
+            'seconds' => $a['seconds'],
+            'topic_video_id' => $a['topic_video_id'],
         ];
     }
 }

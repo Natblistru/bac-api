@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Topic;
+use App\Models\TopicVideoBreakpoint;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -18,9 +19,16 @@ class TopicVideo extends Model
         'status'
     ];
 
-    protected $with = ['topic'];
+    // (opțional) scoate asta ca să eviți overfetch în endpointul de mai jos
+    // protected $with = ['topic'];
 
     public function topic() {
         return $this->belongsTo(Topic::class, 'topic_id', 'id');
+    }
+
+    public function breakpoints()
+    {
+        return $this->hasMany(TopicVideoBreakpoint::class, 'topic_video_id', 'id')
+                    ->orderBy('seconds'); // ordonează crescător
     }
 }

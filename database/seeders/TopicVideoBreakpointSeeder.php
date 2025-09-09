@@ -13,6 +13,6 @@ class TopicVideoBreakpointSeeder extends Seeder
      */
     public function run(): void
     {
-        TopicVideoBreakpoint::factory()->count(2)->create();
+        TopicVideoBreakpoint::factory()->count(7)->create();
     }
 }
