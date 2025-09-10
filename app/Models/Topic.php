@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Subject;
 use App\Models\TopicVideo;
+use App\Models\TopicFlipCard;
 use App\Models\TopicContentUnit;
 use App\Models\TopicPresentation;
 use Illuminate\Database\Eloquent\Model;
@@ -50,6 +51,13 @@ class Topic extends Model
     public function presentations()
     {
         return $this->hasMany(TopicPresentation::class);
+    }
+
+    public function flipCards()
+    {
+        return $this->hasMany(TopicFlipCard::class, 'topic_id')
+            ->orderBy('order_number')
+            ->orderBy('id');
     }
 
 

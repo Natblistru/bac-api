@@ -52,6 +52,7 @@ class TopicController extends Controller
         $includeVideos = $request->boolean('include_videos', true);
         $includePres   = $request->boolean('include_presentations', true);
         $includeBps    = $request->boolean('include_breakpoints', true);
+        $includeFlip   = $request->boolean('include_flip_cards', true);
 
         $with = ['topic_content_unit.topic_domain'];
 
@@ -60,16 +61,15 @@ class TopicController extends Controller
                 $q->select('id','topic_id','title','source')  // adaugă câmpuri după nevoie
                 ->orderBy('id');
             };
-           if ($includeBps) {
-            // eager-load pentru relația imbricată videos.breakpoints
-            $with['videos.breakpoints'] = function ($q) {
-                $q->select('id','topic_video_id','name','time','seconds','status')
-                  ->orderBy('seconds');
-                // (opțional, dacă în TopicVideoBreakpoint ai `protected $with = ['topic_video']`)
-                // $q->without('topic_video');
-            };
-        }
-
+            if ($includeBps) {
+                // eager-load pentru relația imbricată videos.breakpoints
+                $with['videos.breakpoints'] = function ($q) {
+                    $q->select('id','topic_video_id','name','time','seconds','status')
+                    ->orderBy('seconds');
+                    // (opțional, dacă în TopicVideoBreakpoint ai `protected $with = ['topic_video']`)
+                    // $q->without('topic_video');
+                };
+            }
         }
 
         if ($includePres) {
@@ -79,11 +79,23 @@ class TopicController extends Controller
             };
         }
 
+        if ($includeFlip) {
+            $with['flipCards'] = function ($q) {
+                $q->select('id','topic_id','task','answer','order_number','status')
+                ->where('status', 0)                 // dacă vrei doar activele
+                ->orderBy('order_number');
+            };
+        }
+
         // important: eager loading + 404 dacă nu există
         $topic = Topic::with($with)->findOrFail($id);
 
         // util: număr total resurse asociate
-        $topic->loadCount(['videos','presentations']);
+        $topic->loadCount([
+            'videos',
+            'presentations',
+            'flipCards as flip_cards_count',     
+        ]);
 
         return $topic;
     }

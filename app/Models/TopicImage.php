@@ -16,7 +16,6 @@ class TopicImage extends Model
         'status'
     ];
 
-    protected $with = ['topic'];
     public function topic() {
         return $this->belongsTo(Topic::class, 'topic_id', 'id');
     }

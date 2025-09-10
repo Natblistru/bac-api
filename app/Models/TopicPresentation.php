@@ -30,7 +30,6 @@ class TopicPresentation extends Model
             : null;
     }
 
-    protected $with = ['topic'];
     public function topic() {
         return $this->belongsTo(Topic::class, 'topic_id', 'id');
     }

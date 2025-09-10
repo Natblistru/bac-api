@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('topic_flip_cards', function (Blueprint $table) {
             $table->id();
-            $table->string("task",500);
-            $table->string("answer",5000);
+            $table->json("task",500)->nullable();
+            $table->json("answer",5000)->nullable();
             $table->unsignedTinyInteger('order_number');
             $table->unsignedBigInteger("topic_id");  
             $table->unsignedTinyInteger('status')->default(0);

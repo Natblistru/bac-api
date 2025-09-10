@@ -13,6 +13,6 @@ class TopicFlipCardSeeder extends Seeder
      */
     public function run(): void
     {
-        TopicFlipCard::factory()->count(2)->create();
+        TopicFlipCard::factory()->count(4)->create();
     }
 }

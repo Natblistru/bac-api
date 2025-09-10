@@ -18,7 +18,11 @@ class TopicFlipCard extends Model
         'status'
     ];
 
-    protected $with = ['topic'];
+    protected $casts = [
+        'task' => 'array',   // <= foarte important
+        'answer' => 'array',   // <= foarte important        
+    ];
+
     public function topic() {
         return $this->belongsTo(Topic::class, 'topic_id', 'id');
     }

@@ -19,9 +19,6 @@ class TopicVideo extends Model
         'status'
     ];
 
-    // (opțional) scoate asta ca să eviți overfetch în endpointul de mai jos
-    // protected $with = ['topic'];
-
     public function topic() {
         return $this->belongsTo(Topic::class, 'topic_id', 'id');
     }
