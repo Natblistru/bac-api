@@ -14,7 +14,7 @@ class TopicPresentationFactory extends Factory
     public function definition(): array
     {
         $name = 'Figuri de stil';
-        $path = 'https://docs.google.com/presentation/d/e/2PACX-1vQ3Z8ok9EBfP1eIQkLPTtI6iGiqobEAlIQs8bXYWb7begDAHnLtxR_StkIals3vEQ/pubembed?start=false&loop=false&delayms=3000';
+        $path = 'https://docs.google.com/presentation/d/e/2PACX-1vTCYGXsasRbf7orEzr4RNixmNdxR-NzwmRVnGFmAxGVE3RXcQ-3vPD0KaIXbhUDWA/pubembed?start=false&loop=false&delayms=3000';
 
         // Transcriere/descriere de prezentare pentru căutare FULLTEXT (TEXT simplu)
         $content_text1 = <<<'TXT'
@@ -45,9 +45,10 @@ TXT;
         $presentations = [
             [
                 "name"         => 'Figuri de stil',
-                "path"         => 'https://docs.google.com/presentation/d/e/2PACX-1vQ3Z8ok9EBfP1eIQkLPTtI6iGiqobEAlIQs8bXYWb7begDAHnLtxR_StkIals3vEQ/pubembed?start=false&loop=false&delayms=3000',
-                "topic_id"     => 1,
+                "path"         => 'https://docs.google.com/presentation/d/e/2PACX-1vTCYGXsasRbf7orEzr4RNixmNdxR-NzwmRVnGFmAxGVE3RXcQ-3vPD0KaIXbhUDWA/pubembed?start=false&loop=false&delayms=3000',
+                "topic_id"     => 87,
                 "content_text" => $content_text1,
+                "thumbnail_path" => 'presentare_87.jpg'
             ],
         ];
 
@@ -59,6 +60,7 @@ TXT;
             'path'         => $a['path'],
             'topic_id'     => $a['topic_id'],
             'content_text' => $a['content_text'],
+            'thumbnail_path' => $a['thumbnail_path']
         ];
     }
 }

@@ -19,6 +19,9 @@ return new class extends Migration
             $table->unsignedBigInteger("topic_id");
             $table->unsignedTinyInteger('status')->default(0);
             $table->text('content_text')->nullable(); // text pentru căutare
+            $table->string('thumbnail_path')->nullable();   // ex: presentations/thumbnails/abc.jpg
+            $table->unsignedInteger('thumb_w')->nullable();
+            $table->unsignedInteger('thumb_h')->nullable();
             $table->timestamps();
 
 

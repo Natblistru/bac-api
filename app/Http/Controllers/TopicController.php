@@ -74,7 +74,7 @@ class TopicController extends Controller
 
         if ($includePres) {
             $with['presentations'] = function ($q) {
-                $q->select('id','topic_id','name','path','content_text')
+                $q->select('id','topic_id','name','path','content_text','thumbnail_path','thumb_w','thumb_h' )
                 ->orderBy('id');
             };
         }
