@@ -64,7 +64,7 @@ class EvaluationController extends Controller
 
         es.id AS es_id, es.order_number AS es_order, es.content AS es_content,
 
-        ei.id AS ei_id, ei.order_number AS ei_order, ei.task AS ei_task, ei.topic_id AS ei_topic_id,
+        ei.id AS ei_id, ei.order_number AS ei_order, ei.task AS ei_task, ei.subtopic_id AS ei_topic_id,
 
         eq.id AS eq_id, eq.order_number AS eq_order, eq.task AS eq_task, eq.hint AS eq_hint,
         eq.content_settings AS eq_content_settings, eq.placeholder AS eq_placeholder, eq.type AS eq_type,

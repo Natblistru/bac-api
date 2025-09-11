@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\EvaluationAnswer;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class EvaluationQuestion extends Model
 {
@@ -16,7 +17,6 @@ class EvaluationQuestion extends Model
         'content_settings',
         'order_number',
         'evaluation_item_id',
-        'topic_id',
         'status'
     ];
 
@@ -26,8 +26,13 @@ class EvaluationQuestion extends Model
         'content_settings' => 'array',        // JSON -> array
     ];
 
-    protected $with = ['evaluation_item'];
+    // protected $with = ['evaluation_item'];
     public function evaluation_item() {
         return $this->belongsTo(EvaluationItem::class, 'evaluation_item_id', 'id');
+    }
+
+    public function evaluation_answers()
+    {
+        return $this->hasMany(EvaluationAnswer::class, 'evaluation_question_id', 'id');
     }
 }

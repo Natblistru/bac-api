@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\TopicSeeder;
 use Database\Seeders\SubjectSeeder;
+use Database\Seeders\SubtopicSeeder;
 use Database\Seeders\EvaluationSeeder;
 use Database\Seeders\TopicImageSeeder;
 use Database\Seeders\TopicVideoSeeder;
@@ -38,6 +39,7 @@ class DatabaseSeeder extends Seeder
             TopicVideoSeeder::class,
             TopicVideoBreakpointSeeder::class,
             TopicPresentationSeeder::class,
+            SubtopicSeeder::class,
             StudentSeeder::class,
             EvaluationSeeder::class,
             EvaluationSourceSeeder::class,

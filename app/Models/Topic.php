@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Subject;
+use App\Models\Subtopic;
 use App\Models\TopicVideo;
 use App\Models\TopicFlipCard;
 use App\Models\TopicContentUnit;
@@ -58,6 +59,11 @@ class Topic extends Model
         return $this->hasMany(TopicFlipCard::class, 'topic_id')
             ->orderBy('order_number')
             ->orderBy('id');
+    }
+
+    public function subtopics()
+    {
+        return $this->hasMany(Subtopic::class);
     }
 
 

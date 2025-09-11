@@ -54,6 +54,9 @@ class TopicController extends Controller
         $includeBps    = $request->boolean('include_breakpoints', true);
         $includeFlip   = $request->boolean('include_flip_cards', true);
 
+        $includeSubs   = $request->boolean('include_subtopics', true);
+        $includeEval   = $includeSubs;
+
         $with = ['topic_content_unit.topic_domain'];
 
         if ($includeVideos) {
@@ -87,6 +90,77 @@ class TopicController extends Controller
             };
         }
 
+        if ($includeSubs) {
+            // încărcăm subtopicele, plus count de evaluation_items per subtopic
+            $with['subtopics'] = function ($q) use ($includeEval) {
+                $q->select('id','topic_id','name','order_number','status')
+                ->where('status', 0)
+                ->orderBy('order_number')->orderBy('id')
+                ->withCount('evaluation_items');
+
+                if ($includeEval) {
+                    $q->with(['evaluation_items' => function ($qq) {
+                        $qq->select(
+                                'id',
+                                'subtopic_id',           // FK necesar
+                                'evaluation_source_id',
+                                'task',
+                                'order_number',
+                                'status'
+                            )
+                            ->where('status', 0)
+                            ->orderBy('order_number')->orderBy('id')
+                            // COUNT întrebări pe fiecare item
+                            ->withCount('evaluation_questions')
+                            // Întrebările propriu-zise:
+                            ->with(['evaluation_questions' => function ($q3) {
+                                $q3->select(
+                                        'id',
+                                        'evaluation_item_id',   // FK necesar!
+                                        'task',
+                                        'hint',
+                                        'placeholder',
+                                        'content_settings',
+                                        'order_number',
+                                        'status'
+                                    )
+                                    ->where('status', 0)
+                                    ->orderBy('order_number')->orderBy('id')
+
+                                    // răspunsurile întrebărilor:
+                                    ->withCount('evaluation_answers')
+                                    ->with(['evaluation_answers' => function ($q4) {
+                                        $q4->select(
+                                                'id',
+                                                'evaluation_question_id', 
+                                                'task',
+                                                'content',
+                                                'max_points',
+                                                'status'
+                                            )
+                                            ->where('status', 0)
+                                            ->orderBy('id')
+
+                                            //  opțiunile răspunsului
+                                            ->withCount('evaluation_answer_options')
+                                            ->with(['evaluation_answer_options' => function ($q5) {
+                                                $q5->select(
+                                                        'id',
+                                                        'evaluation_answer_id', 
+                                                        'evaluation_option_id', // FK necesar pentru nested
+                                                        'status'
+                                                    )
+                                                    ->where('status', 0)
+                                                    ->orderBy('id');
+                                            }]);
+                                    }]);
+                            }]);
+                    }]);
+                }
+            };
+        }
+
+
         // important: eager loading + 404 dacă nu există
         $topic = Topic::with($with)->findOrFail($id);
 
@@ -94,7 +168,8 @@ class TopicController extends Controller
         $topic->loadCount([
             'videos',
             'presentations',
-            'flipCards as flip_cards_count',     
+            'flipCards as flip_cards_count',    
+            'subtopics as subtopics_count', 
         ]);
 
         return $topic;

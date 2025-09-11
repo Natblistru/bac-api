@@ -92,19 +92,19 @@ HTML;
 HTML;
 
         $ev_items = [
-            ["order_number" => 1,  "evaluation_source_id" => 1,  "task" => $task1, "topic_id" => 1],
-            ["order_number" => 2,  "evaluation_source_id" => 1,  "task" => $task2, "topic_id" => 1],
-            ["order_number" => 3,  "evaluation_source_id" => 1,  "task" => $task3, "topic_id" => 1],
-            ["order_number" => 4,  "evaluation_source_id" => 1,  "task" => $task4, "topic_id" => 1],
-            ["order_number" => 5,  "evaluation_source_id" => 1,  "task" => $task5, "topic_id" => 1],
-            ["order_number" => 6,  "evaluation_source_id" => 1,  "task" => $task6, "topic_id" => 1],
-            ["order_number" => 7,  "evaluation_source_id" => 1,  "task" => $task7, "topic_id" => 1],
-            ["order_number" => 8,  "evaluation_source_id" => 1,  "task" => $task8, "topic_id" => 1],
-            ["order_number" => 9,  "evaluation_source_id" => 1,  "task" => $task9, "topic_id" => 1],
-            ["order_number" => 10,  "evaluation_source_id" => 2,  "task" => null, "topic_id" => 1],  
-            ["order_number" => 11,  "evaluation_source_id" => 3,  "task" => null, "topic_id" => 1], 
-            ["order_number" => 12,  "evaluation_source_id" => 4,  "task" => null, "topic_id" => 1],     
-            ["order_number" => 13,  "evaluation_source_id" => 5,  "task" => null, "topic_id" => null],      
+            ["order_number" => 1,  "evaluation_source_id" => 1,  "task" => $task1, "subtopic_id" => 3],
+            ["order_number" => 2,  "evaluation_source_id" => 1,  "task" => $task2, "subtopic_id" => 1],
+            ["order_number" => 3,  "evaluation_source_id" => 1,  "task" => $task3, "subtopic_id" => 1],
+            ["order_number" => 4,  "evaluation_source_id" => 1,  "task" => $task4, "subtopic_id" => 1],
+            ["order_number" => 5,  "evaluation_source_id" => 1,  "task" => $task5, "subtopic_id" => 1],
+            ["order_number" => 6,  "evaluation_source_id" => 1,  "task" => $task6, "subtopic_id" => 1],
+            ["order_number" => 7,  "evaluation_source_id" => 1,  "task" => $task7, "subtopic_id" => 1],
+            ["order_number" => 8,  "evaluation_source_id" => 1,  "task" => $task8, "subtopic_id" => 1],
+            ["order_number" => 9,  "evaluation_source_id" => 1,  "task" => $task9, "subtopic_id" => 1],
+            ["order_number" => 10,  "evaluation_source_id" => 2,  "task" => null, "subtopic_id" => 1],  
+            ["order_number" => 11,  "evaluation_source_id" => 3,  "task" => null, "subtopic_id" => 1], 
+            ["order_number" => 12,  "evaluation_source_id" => 4,  "task" => null, "subtopic_id" => 1],     
+            ["order_number" => 13,  "evaluation_source_id" => 5,  "task" => null, "subtopic_id" => null],      
         ];
 
         $a = $ev_items[ static::$i % count($ev_items) ];
@@ -115,7 +115,7 @@ HTML;
                 'html'   => $a['task'], // șirul HTML
             ],
             'order_number' => $a['order_number'],
-            'topic_id' => $a['topic_id'],
+            'subtopic_id' => $a['subtopic_id'],
             'evaluation_source_id'=> $a['evaluation_source_id'],
         ];
     }

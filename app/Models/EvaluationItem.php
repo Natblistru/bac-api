@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\Topic;
+use App\Models\Subtopic;
 use App\Models\EvaluationSource;
+use App\Models\EvaluationQuestion;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -15,7 +16,7 @@ class EvaluationItem extends Model
         'task',
         'order_number',
         'evaluation_source_id',
-        'topic_id',
+        'subtopic_id',
         'status'
     ];
 
@@ -23,11 +24,17 @@ class EvaluationItem extends Model
         'task' => 'array', // ← important
     ];
 
-    protected $with = ['evaluation'];
+
     public function evaluation_source() {
         return $this->belongsTo(EvaluationSource::class, 'evaluation_source_id', 'id');
     }
-    public function topic() {
-        return $this->belongsTo(Topic::class, 'topic_id', 'id');
+    public function subtopic() {
+        return $this->belongsTo(Subtopic::class, 'subtopic_id', 'id');
     }
+
+    public function evaluation_questions()
+    {
+        return $this->hasMany(EvaluationQuestion::class);
+    }
+
 }

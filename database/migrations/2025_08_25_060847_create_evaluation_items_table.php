@@ -17,12 +17,12 @@ return new class extends Migration
             $table->json('task')->nullable();
 
             $table->unsignedBigInteger("evaluation_source_id");
-            $table->unsignedBigInteger("topic_id")->nullable();
+            $table->unsignedBigInteger("subtopic_id")->nullable();
             $table->tinyInteger("status")->default(0);
             $table->timestamps();
 
             $table->foreign("evaluation_source_id")->references("id")->on("evaluation_sources");
-            $table->foreign("topic_id")->references("id")->on("topics");
+            $table->foreign("subtopic_id")->references("id")->on("subtopics");
         });
     }
 

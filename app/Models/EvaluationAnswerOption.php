@@ -15,7 +15,7 @@ class EvaluationAnswerOption extends Model
         'status'
     ];
 
-    protected $with = ['evaluation_answer', 'evaluation_option'];
+    // protected $with = ['evaluation_answer', 'evaluation_option'];
     public function evaluation_answer() {
         return $this->belongsTo(EvaluationAnswer::class, 'evaluation_answer_id', 'id');
     }
