@@ -118,6 +118,7 @@ class TopicController extends Controller
                                         'id',
                                         'evaluation_item_id',   // FK necesar!
                                         'task',
+                                        'type',
                                         'hint',
                                         'placeholder',
                                         'content_settings',

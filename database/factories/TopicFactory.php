@@ -170,7 +170,7 @@ class TopicFactory extends Factory
 
             ["name" => "Norme ortoepice și ortografice", "topic_content_unit_id" => 18, "path" => '' ,  "content" => null], //86
 
-            ["name" => "Polisemia", "topic_content_unit_id" => 19, "path" => '' ,  "content" => $html87], //87
+            ["name" => "Polisemia", "topic_content_unit_id" => 19, "path" => 'polisemie.webp' ,  "content" => $html87], //87
             ["name" => "Relații logico-semantice între cuvinte. Sinonimia contextuală", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //88
             ["name" => "Formarea cuvintelor cu afixe și elemente de compunere neologice", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //89
             ["name" => "Expresii autohtone, internaționale, intraductibile", "topic_content_unit_id" => 19, "path" => '' ,  "content" => null], //90

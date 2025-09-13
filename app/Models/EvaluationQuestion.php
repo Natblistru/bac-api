@@ -13,6 +13,7 @@ class EvaluationQuestion extends Model
     protected $fillable = [
         'task',
         'hint',
+        'type',
         'placeholder',
         'content_settings',
         'order_number',
