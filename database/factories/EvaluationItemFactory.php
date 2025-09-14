@@ -253,6 +253,53 @@ HTML;
 </p>
 HTML;
 
+        $source10 = <<<'HTML'
+<p>Scrie, în spațiul rezervat, o invitație pe care o vei adresa colegilor tăi, valorificând datele legendei: „Te numești Alexandru / Alexandra Baciu. Studiezi în clasa a XII-a la Liceul Teoretic „Mihai Eminescu” din orașul Nisporeni și ești membru/membră al/a Clubului
+„Quo vadis”. Aveți intenția să organizați, în cadrul liceului, un atelier de informare cu genericul: <em>Învață în Moldova!</em> Activitatea are drept scop promovarea studiilor universitare din Republica Moldova și se va desfășura pe data de 19 iunie 2025, la ora 14:00, în incinta instituției în care înveți”. Vei semna invitația.</p>
+HTML;
+
+        $source11 = <<<'HTML'
+<p>Formulează, în text coerent de 7-8 rânduri, un punct de vedere prin care să argumentezi dacă învățarea limbilor străine te ajută să înțelegi cultura altor țări, referindu-te la propria experiență.</p>
+HTML;
+
+
+        $source12 = <<<'HTML'
+<p>Redactează un eseu argumentativ de 1–1,5 pagini, în raport cu aserțiunea:
+  <em>Valoarea unui om nu constă în ceea ce are, ci în ceea ce este.</em>
+  (Oscar Wilde)
+</p>
+<p>În elaborarea eseului, vei avea în vedere următoarele repere:</p>
+
+<table style="width:100%; border-collapse:collapse; font-family:'Times New Roman'; font-size:18px;">
+  <tbody>
+    <tr>
+      <td style="padding:4px 8px;">a) exprimarea clară a opiniei;</td>
+      <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2</td>
+    </tr>
+    <tr>
+      <td style="padding:4px 8px;">b) formularea a două teze distincte;</td>
+      <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4</td>
+    </tr>
+    <tr>
+      <td style="padding:4px 8px;">c) susținerea fiecărei teze cu câte un argument;</td>
+      <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4</td>
+    </tr>
+    <tr>
+      <td style="padding:4px 8px;">d) referința la două texte din literatura română, studiate sau citite independent, care confirmă fiecare teză enunțată;</td>
+      <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3 4 5 6</td>
+    </tr>
+    <tr>
+      <td style="padding:4px 8px;">e) respectarea structurii eseului argumentativ;</td>
+      <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1 2 3</td>
+    </tr>
+    <tr>
+      <td style="padding:4px 8px;">f) respectarea limitei de întindere;</td>
+      <td style="padding:4px 8px; text-align:left; white-space:nowrap;">L 0 1</td>
+    </tr>
+  </tbody>
+</table>
+HTML;
+
         $ev_items = [
             ["order_number" => 1,  "evaluation_source_id" => 1,  "task" => $task1, "short_source_content"  => null, "subtopic_id" => 3],//1
             ["order_number" => 2,  "evaluation_source_id" => 1,  "task" => $task2, "short_source_content"  => null, "subtopic_id" => 1],//2
@@ -263,9 +310,9 @@ HTML;
             ["order_number" => 7,  "evaluation_source_id" => 1,  "task" => $task7, "short_source_content"  => $source7, "subtopic_id" => 11],//7
             ["order_number" => 8,  "evaluation_source_id" => 1,  "task" => $task8, "short_source_content"  => null, "subtopic_id" => 13],//8
             ["order_number" => 9,  "evaluation_source_id" => 1,  "task" => $task9, "short_source_content"  => $source9, "subtopic_id" => 12],//9
-            ["order_number" => 10,  "evaluation_source_id" => 2,  "task" => null, "short_source_content"  => null, "subtopic_id" => 14], //10
-            ["order_number" => 11,  "evaluation_source_id" => 3,  "task" => null, "short_source_content"  => null, "subtopic_id" => 15], //11
-            ["order_number" => 12,  "evaluation_source_id" => 4,  "task" => null, "short_source_content"  => null, "subtopic_id" => 16], //12    
+            ["order_number" => 10,  "evaluation_source_id" => 2,  "task" => null, "short_source_content"  => $source10, "subtopic_id" => 14], //10
+            ["order_number" => 11,  "evaluation_source_id" => 3,  "task" => null, "short_source_content"  => $source11, "subtopic_id" => 15], //11
+            ["order_number" => 12,  "evaluation_source_id" => 4,  "task" => null, "short_source_content"  => $source12, "subtopic_id" => 16], //12    
             ["order_number" => 13,  "evaluation_source_id" => 5,  "task" => null, "short_source_content"  => null, "subtopic_id" => null],//13     
         ];
 
