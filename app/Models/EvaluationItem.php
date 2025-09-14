@@ -14,6 +14,7 @@ class EvaluationItem extends Model
     protected $table = 'evaluation_items';
     protected $fillable = [
         'task',
+        'short_source_content',
         'order_number',
         'evaluation_source_id',
         'subtopic_id',
@@ -22,6 +23,7 @@ class EvaluationItem extends Model
 
     protected $casts = [
         'task' => 'array', // ← important
+        'short_source_content' => 'array', // ← important        
     ];
 
 

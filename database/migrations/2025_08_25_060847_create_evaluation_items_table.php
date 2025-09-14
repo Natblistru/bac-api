@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer("order_number")->default(1);
             $table->json('task')->nullable();
+            $table->json('short_source_content')->nullable();
 
             $table->unsignedBigInteger("evaluation_source_id");
             $table->unsignedBigInteger("subtopic_id")->nullable();

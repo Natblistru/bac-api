@@ -102,9 +102,10 @@ class TopicController extends Controller
                     $q->with(['evaluation_items' => function ($qq) {
                         $qq->select(
                                 'id',
-                                'subtopic_id',           // FK necesar
+                                'subtopic_id',           
                                 'evaluation_source_id',
                                 'task',
+                                'short_source_content',
                                 'order_number',
                                 'status'
                             )
