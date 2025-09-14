@@ -112,6 +112,10 @@ class TopicController extends Controller
                             ->orderBy('order_number')->orderBy('id')
                             // COUNT întrebări pe fiecare item
                             ->withCount('evaluation_questions')
+                            ->with([
+                                'evaluation_source:id,evaluation_id',
+                                'evaluation_source.evaluation:id,name,profil',
+                            ])
                             // Întrebările propriu-zise:
                             ->with(['evaluation_questions' => function ($q3) {
                                 $q3->select(
