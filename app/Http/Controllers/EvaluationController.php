@@ -66,16 +66,22 @@ class EvaluationController extends Controller
 
         ei.id AS ei_id, ei.order_number AS ei_order, ei.task AS ei_task, ei.subtopic_id AS ei_topic_id,
 
-        eq.id AS eq_id, eq.order_number AS eq_order, eq.task AS eq_task, eq.hint AS eq_hint,
+        eq.id AS eq_id, eq.order_number AS eq_order, eq.task AS eq_task, eq.hint AS eq_hint, eq.evaluation_item_id AS eq_eval_item,
         eq.content_settings AS eq_content_settings, eq.placeholder AS eq_placeholder, eq.type AS eq_type,
 
         ea.id AS ea_id, ea.task AS ea_task, ea.content AS ea_content, ea.max_points AS ea_max_points,
 
-        eao.id AS eao_id, eao.evaluation_option_id AS eao_option_id
+        eao.id AS eao_id, eao.evaluation_option_id AS eao_option_id,
+
+        s.id AS s_id, s.name AS s_name, 
+
+        t.id AS t_id, t.name AS t_name
 
         FROM evaluations e
         JOIN evaluation_sources es ON es.evaluation_id = e.id AND es.status = 0
         JOIN evaluation_items ei  ON ei.evaluation_source_id = es.id AND ei.status = 0
+        LEFT JOIN subtopics s  ON s.id = ei.subtopic_id AND s.status = 0
+        LEFT JOIN topics t  ON t.id = s.topic_id AND t.status = 0        
         JOIN evaluation_questions eq ON eq.evaluation_item_id = ei.id AND eq.status = 0
         JOIN evaluation_answers ea ON ea.evaluation_question_id = eq.id AND ea.status = 0
         JOIN evaluation_answer_options eao ON eao.evaluation_answer_id = ea.id AND eao.status = 0
@@ -149,6 +155,10 @@ class EvaluationController extends Controller
                     $questionNode = [
                         'id'               => $qf->eq_id,
                         'order_number'     => $qf->eq_order,
+                        'subtopic_id'      => $qf->s_id,
+                        'subtopic_name'    => $qf->s_name,  
+                        'topic_id'         => $qf->t_id,
+                        'topic_name'       => $qf->t_name,                                               
                         'task'             => $decode($qf->eq_task),             // JSON
                         'hint'             => $qf->eq_hint,
                         'content_settings' => $decode($qf->eq_content_settings), // JSON
