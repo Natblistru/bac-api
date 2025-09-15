@@ -73,6 +73,8 @@ class EvaluationController extends Controller
 
         eao.id AS eao_id, eao.evaluation_option_id AS eao_option_id,
 
+        eo.id AS eo_id, eo.label AS eo_label, eo.points AS eo_points,
+
         s.id AS s_id, s.name AS s_name, 
 
         t.id AS t_id, t.name AS t_name
@@ -85,6 +87,7 @@ class EvaluationController extends Controller
         JOIN evaluation_questions eq ON eq.evaluation_item_id = ei.id AND eq.status = 0
         JOIN evaluation_answers ea ON ea.evaluation_question_id = eq.id AND ea.status = 0
         JOIN evaluation_answer_options eao ON eao.evaluation_answer_id = ea.id AND eao.status = 0
+        JOIN evaluation_options eo ON eao.evaluation_option_id = eo.id AND eo.status = 0
         WHERE e.status = 0 AND e.id = ?
         ORDER BY es.order_number, ei.order_number, eq.order_number, ea.id, eao.id
         SQL;
@@ -185,8 +188,10 @@ class EvaluationController extends Controller
                         $options = $aGroup
                             ->filter(fn($r) => !is_null($r->eao_id))
                             ->map(fn($r) => [
-                                'id'                  => $r->eao_id,
-                                'evaluation_option_id'=> $r->eao_option_id,
+                                'answer_option_id' => $r->eao_id,
+                                'option_id'        => $r->eao_option_id,
+                                'label'            => $r->eo_label,
+                                'points'           => $r->eo_points,
                             ])
                             ->values()
                             ->all();
