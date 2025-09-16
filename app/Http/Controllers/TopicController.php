@@ -153,11 +153,15 @@ class TopicController extends Controller
                                                 $q5->select(
                                                         'id',
                                                         'evaluation_answer_id', 
-                                                        'evaluation_option_id', // FK necesar pentru nested
+                                                        'evaluation_option_id', 
                                                         'status'
                                                     )
                                                     ->where('status', 0)
-                                                    ->orderBy('id');
+                                                    ->orderBy('id')
+                                                    ->with(['evaluation_option' => function ($qo) {
+                                                        $qo->select('id', 'label', 'points')
+                                                        ->where('status', 0);
+                                                    }]);
                                             }]);
                                     }]);
                             }]);
