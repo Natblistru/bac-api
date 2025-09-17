@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TopicController;
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\EvaluationController;
 
 /*
@@ -23,6 +24,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/test', function () {
     return response()->json(['ok' => true]);
 });
+Route::get('/me', [AuthController::class, 'me'])->middleware('auth:sanctum');
+
+
+Route::middleware('guest')->group(function () {
+    Route::post('/register', [AuthController::class, "register"]);
+    Route::post('/login', [AuthController::class, "login"]);
+
+    Route::post('/forgot-password', [AuthController::class, "forgot"]);       
+    Route::post('/reset-password/{token}', [AuthController::class, "reset"]);    
+});
+
+Route::post('/logout', [AuthController::class, "logout"]);
+
 
 Route::get('/evaluations', [EvaluationController::class, 'index']);      // listă
 
