@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\API;
 
+use Throwable;
 use App\Models\User;
 use App\Models\Student;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Mail\ForgotPasswordMail;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -124,6 +129,82 @@ class AuthController extends Controller
     public function me(Request $r)
     {
         return response()->json($r->user());
+    }
+
+    public function forgot(Request $request): JsonResponse
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'validation_errors' => $validator->messages(),
+            ], 422);
+        }
+
+        $user = User::where('email', $request->input('email'))->first();
+
+        if (!$user || !$user->email) {
+            return response()->json([
+                'status'  => 404,
+                'message' => 'Incorrect Email Address Provided',
+            ], 404);
+        }
+
+        // token unic, suficient de lung
+        $user->remember_token = Str::random(30);
+        $user->save();
+
+        Mail::to($user->email)->send(new ForgotPasswordMail($user));
+
+        return response()->json([
+            'status'  => 200,
+            'message' => 'A reset link has been sent to your email address.',
+        ]);
+    }
+
+    public function reset(string $token, Request $request): JsonResponse
+    {
+        $validator = Validator::make($request->all(), [
+            'password' => 'required|min:8|confirmed', // folosește și password_confirmation
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'validation_errors' => $validator->messages(),
+            ], 422);
+        }
+
+        $user = User::where('remember_token', $token)->first();
+
+        if (!$user) {
+            return response()->json(['message' => 'The token is not valid'], 404);
+        }
+
+        $user->password = Hash::make($request->password);
+        // invalidează tokenul ca să fie one-time
+        $user->remember_token = null;
+        $user->save();
+
+        // Dacă folosești Sanctum și vrei să deconectezi sesiunile vechi:
+        try { $user->tokens()->delete(); } catch (Throwable $e) {}
+
+        return response()->json([
+            'status'  => 200,
+            'message' => 'Password reset successfully',
+        ]);
+    }
+
+    public function showResetEmail(string $token): JsonResponse
+    {
+        $user = User::where('remember_token', $token)->first();
+
+        if (!$user) {
+            return response()->json(['message' => 'Invalid token'], 404);
+        }
+
+        return response()->json(['email' => $user->email], 200);
     }
 
 }
