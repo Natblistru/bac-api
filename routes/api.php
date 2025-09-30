@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\EvaluationController;
+use App\Http\Controllers\StudentEvaluationAnswerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,6 @@ Route::get('/topics/{id}', [TopicController::class, 'show']);
 Route::get('/evaluations/{id}', [EvaluationController::class, 'show']);
 
 Route::get('/evaluations/{id}/tree', [EvaluationController::class, 'tree']);
+
+Route::post('/student-evaluation-answers/bulk', [StudentEvaluationAnswerController::class, 'storeBulk']
+);
