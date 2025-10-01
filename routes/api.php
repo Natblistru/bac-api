@@ -48,7 +48,7 @@ Route::get('/topics/{id}', [TopicController::class, 'show']);
 
 Route::get('/evaluations/{id}', [EvaluationController::class, 'show']);
 
-Route::get('/evaluations/{id}/tree', [EvaluationController::class, 'tree']);
+Route::get('/evaluations/{id}/tree/{studentId}', [EvaluationController::class, 'tree']);
 
 Route::post('/student-evaluation-answers/bulk', [StudentEvaluationAnswerController::class, 'storeBulk']
 );

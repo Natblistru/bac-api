@@ -54,7 +54,7 @@ class EvaluationController extends Controller
         return Evaluation::find($id); 
     }
 
-    public function tree(int $id)
+    public function tree(int $id, int $studentId)
     {
         // 1) Mega-join PLAT
         $sql = <<<SQL
@@ -70,6 +70,8 @@ class EvaluationController extends Controller
         eq.content_settings AS eq_content_settings, eq.placeholder AS eq_placeholder, eq.type AS eq_type,
 
         ea.id AS ea_id, ea.task AS ea_task, ea.content AS ea_content, ea.max_points AS ea_max_points,
+
+        sea.id AS sea_id, sea.points AS sea_student_points,
 
         eao.id AS eao_id, eao.evaluation_option_id AS eao_option_id,
 
@@ -87,12 +89,13 @@ class EvaluationController extends Controller
         JOIN evaluation_questions eq ON eq.evaluation_item_id = ei.id AND eq.status = 0
         JOIN evaluation_answers ea ON ea.evaluation_question_id = eq.id AND ea.status = 0
         JOIN evaluation_answer_options eao ON eao.evaluation_answer_id = ea.id AND eao.status = 0
+        LEFT JOIN student_evaluation_answers sea ON sea.evaluation_answer_option_id = eao.id AND sea.student_id = ?
         JOIN evaluation_options eo ON eao.evaluation_option_id = eo.id AND eo.status = 0
         WHERE e.status = 0 AND e.id = ?
         ORDER BY es.order_number, ei.order_number, eq.order_number, ea.id, eao.id
         SQL;
 
-        $rows = DB::select($sql, [$id]);
+        $rows = DB::select($sql, [$studentId, $id]);
         if (empty($rows)) {
             return response()->json(['message' => 'Not found'], 404);
         }
@@ -192,6 +195,8 @@ class EvaluationController extends Controller
                                 'option_id'        => $r->eao_option_id,
                                 'label'            => $r->eo_label,
                                 'points'           => $r->eo_points,
+                                'student_points'   => $r->sea_student_points, // poate fi null
+                                'selected'         => !is_null($r->sea_id),   // <— semnal clar
                             ])
                             ->values()
                             ->all();
